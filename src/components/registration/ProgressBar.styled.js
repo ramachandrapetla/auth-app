@@ -45,7 +45,7 @@ export const StepStyle = styled.div`
     height: 40px;
     border-radius: 50%;
     background-color: #eee;
-    border: 2px solid ${props => props.step > props.activeStep ? "#ddd" : "orange"};
+    border: 2px solid ${props => props.$step > props.$active ? "#ddd" : "orange"};
     display: flex;
     justify-content: center;
     align-items: center;

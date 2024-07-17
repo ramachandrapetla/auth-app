@@ -14,8 +14,8 @@ const ProgressBar = ({steps, active}) => {
                     steps.map((step, idx) => {
                         return (
                             <StepWrapper key={idx}>
-                                <StepStyle step={step.stepNumber} active={active}>
-                                    {step.stepNumber > active ? <div>{step.stepNumber}</div> : <CheckMark>L</CheckMark>}   
+                                <StepStyle $step={step.stepNumber} $active={active}>
+                                    {step.stepNumber >= active ? <div>{step.stepNumber}</div> : <CheckMark>L</CheckMark>}   
                                 </StepStyle>
                                 <StepLabelContainer>
                                     <StepLabel>{step.label}</StepLabel>
