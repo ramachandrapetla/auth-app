@@ -6,7 +6,7 @@ import ContactDetails from './components/registration/ContactDetails'
 import AccountSetup from './components/registration/AccountSetup'
 
 function App() {
-  const [activeStep, setActiveStep] = useState(2)
+  const [activeStep, setActiveStep] = useState(1)
   const [personalInfo, setPersonalInfo] = useState({})
   const [contactInfo, setContactInfo] = useState({})
   const [accountInfo, setAccountInfo] = useState({})
