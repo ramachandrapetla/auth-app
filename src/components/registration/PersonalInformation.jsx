@@ -1,32 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormField from "../storybook/FormField";
+import { connect } from "react-redux";
+import { setPersonalInfoByFieldName } from "../../app/features/registration/personalinfo.slice";
 
-const PersonalInformation = () => {
-    const [personalInfo, setPersonalInfo] = useState({
-        firstName: "",
-        lastName: "",
-        dob: ""
-      })
+const PersonalInformation = ({personalInfo, dispatch}) => {
 
     const handleChange= (e) => {
         switch(e.target.name) {
             case "firstName": 
-                setPersonalInfo({
-                    ...personalInfo,
-                    firstName: e.target.value
-                })
+                dispatch(setPersonalInfoByFieldName({
+                    name: "firstName",
+                    value: e.target.value
+                }))
                 break;
             case "lastName": 
-                setPersonalInfo({
-                    ...personalInfo,
-                    lastName: e.target.value
-                })
+                dispatch(setPersonalInfoByFieldName({
+                    name: "lastName",
+                    value: e.target.value
+                }))
                 break;
             case "dob": 
-                setPersonalInfo({
-                    ...personalInfo,
-                    dob: e.target.value
-                })
+                dispatch(setPersonalInfoByFieldName({
+                    name: "dob",
+                    value: e.target.value
+                }))
                 break;
         }
     }
@@ -40,4 +37,14 @@ const PersonalInformation = () => {
     )
 }
 
-export default PersonalInformation;
+
+function mapStateToProps(state) {
+    
+    const {personalInfo} = state;
+
+    return {
+        personalInfo
+    }
+}
+
+export default connect(mapStateToProps)(PersonalInformation)
