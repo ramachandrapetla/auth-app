@@ -7,9 +7,6 @@ import AccountSetup from './components/registration/AccountSetup'
 
 function App() {
   const [activeStep, setActiveStep] = useState(1)
-  const [personalInfo, setPersonalInfo] = useState({})
-  const [contactInfo, setContactInfo] = useState({})
-  const [accountInfo, setAccountInfo] = useState({})
 
   const steps = [
     {
@@ -26,6 +23,13 @@ function App() {
     }
   ]
 
+  const FormLoader = ({step}) => {
+    switch(step) {
+      case 1: return <PersonalInformation />
+      case 2: return <ContactDetails />
+      case 3: return <AccountSetup />
+    }
+  }
   const handlePrev = () => {
     setActiveStep(activeStep - 1);
   }
@@ -57,11 +61,4 @@ function App() {
   )
 }
 
-const FormLoader = ({step}) => {
-  switch(step) {
-    case 1: return <PersonalInformation />
-    case 2: return <ContactDetails />
-    case 3: return <AccountSetup />
-  }
-}
 export default App
