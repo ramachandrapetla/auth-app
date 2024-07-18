@@ -23,8 +23,8 @@ const ContactDetails = ({contactInfo, dispatch}) => {
 
     return (
         <div onChange={handleChange}> 
-            <FormField placeholder="eg. youremail@domain.com" label="Enter email address" type="text" value={contactInfo.email}required={true} name="email"/>
-            <FormField placeholder="eg. 456-343-9843" label="Enter phone number" type="tel" value={contactInfo.phone} required={true} name="phone"/>
+            <FormField placeholder="youremail@domain.com" label="Enter email address" type="text" value={contactInfo.email}required={true} name="email"/>
+            <FormField placeholder="456-343-9843" label="Enter phone number" type="tel" value={contactInfo.phone} required={true} name="phone"/>
         </div>
     )
 }

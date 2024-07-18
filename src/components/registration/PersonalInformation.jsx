@@ -30,16 +30,16 @@ const PersonalInformation = ({personalInfo, dispatch}) => {
 
     return (
         <div onChange={handleChange}> 
-            <FormField placeholder="eg. John" label="Enter First Name" required={true} value={personalInfo.firstName} name="firstName"/>
-            <FormField placeholder="eg. Smith" label="Enter Last Name" required={true} value={personalInfo.lastName} name="lastName"/>
-            <FormField placeholder="eg. 01/01/1997" label="Enter Date of Birth" required={true} value={personalInfo.dob} name="dob" type="date"/>
+            <FormField placeholder="John" label="Enter First Name" required={true} value={personalInfo.firstName} name="firstName"/>
+            <FormField placeholder="Smith" label="Enter Last Name" required={true} value={personalInfo.lastName} name="lastName"/>
+            <FormField placeholder="01/01/1997" label="Enter Date of Birth" required={true} value={personalInfo.dob} name="dob" type="date"/>
         </div>
     )
 }
 
 
 function mapStateToProps(state) {
-    
+
     const {personalInfo} = state;
 
     return {
