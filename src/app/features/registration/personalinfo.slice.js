@@ -3,8 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 export const personalInfoSlice = createSlice({
   name: 'personalInformation',
   initialState: {
-    firstName: "Ramachandra",
-    lastName: "Petla",
+    firstName: "",
+    lastName: "",
     gender: "",
     dob: "",
     lastFourSSN: ""
