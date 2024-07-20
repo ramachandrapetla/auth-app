@@ -2,13 +2,10 @@ import shortid from "shortid"
 import "./storybook.css"
 
 const FormField = ({
-    placeholder,
-    onChange,
     label,
-    type="text",
-    required,
-    value,
-    name
+    error,
+    className,
+    ...rest
 }) => {
     const shortId = shortid.generate()
     return (
@@ -20,8 +17,8 @@ const FormField = ({
                 </div>
             }
             <div className="form-field">
-                <input type={type} placeholder={placeholder} onChange={onChange} id={shortId} className="form-field-input" required={required} value={value} name={name}/>
-                <p></p>
+                <input id={shortId} className={`form-field-input ${className ? className : ""} ${error ? "error-outline" : ""}`}  {...rest}/>
+                {error && error !== "" && <p className="form-field-error">{error}</p>}
             </div>
         </div>
     )

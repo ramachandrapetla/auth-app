@@ -4,7 +4,10 @@ export const contactInfoSlice = createSlice({
   name: 'contactInformation',
   initialState: {
     email: "",
-    phone: "",
+    phone: {
+      actual: "",
+      formatted: ""
+    },
     address1: "",
     address2: "",
     city: "",

@@ -25,9 +25,9 @@ function App() {
 
   const FormLoader = ({step}) => {
     switch(step) {
-      case 1: return <PersonalInformation />
-      case 2: return <ContactDetails />
-      case 3: return <AccountSetup />
+      case 1: return <PersonalInformation handleNext={handleNext} />
+      case 2: return <ContactDetails handleNext={handleNext} handlePrev={handlePrev}/>
+      case 3: return <AccountSetup handlePrev={handlePrev}/>
     }
   }
   const handlePrev = () => {
@@ -47,16 +47,6 @@ function App() {
           <FormLoader step={activeStep} />
         </div>
       }
-      <div className="button-container">
-        {activeStep === steps.length 
-          ? <button>Submit</button>
-          : <button onClick={handleNext} disabled={activeStep===steps.length}>Next</button>
-        }
-        {activeStep !== 1  && <button onClick={handlePrev}>Prev</button>}
-      </div>
-      <div>
-    
-      </div>
     </div>
   )
 }

@@ -4,3 +4,7 @@
   font-weight: 400;
   font-synthesis: none;
 }
+
+* {
+  box-sizing: border-box;
+}
