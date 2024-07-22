@@ -33,7 +33,6 @@ const PersonalInformation = ({personalInfo, handleNext, dispatch}) => {
                 break;
         }
         const isValid = validatePersonalInfo(updatedInfo)
-        console.log("Valid: ", isValid)
         setNextDisabled(!isValid)
     }
 
